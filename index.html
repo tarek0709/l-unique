@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farida & Tarek - L’Aventure Miaoumant Romantique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'rose-clair': '#fec5d9',
+                        'rose-fonce': '#f8a1c0',
+                        'bleu-ciel': '#c2e4ff',
+                        'bleu-clair': '#a8d1e7',
+                        'bleu-fonce': '#5da9dd',
+                        'beige': '#fff0e6',
+                        'marron': '#e6c9b0'
+                    },
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'dancing': ['Dancing Script', 'cursive']
+                    },
+                    backgroundImage: {
+                        'waves': "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEyODAgMTQwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48cGF0aCBmaWxsPSIjYTdkMWU3IiBkPSJNMCwyNi42Yzc4LjYtNTAuOCwyMTMuOS03OS43LDU0NS43LTEzLjJjMzMxLjgsNjYuNSw1NjMuNC0zOS41LDczNC40LDkuNnYxMTcuNEgwVjI2LjZ6IiBvcGFjaXR5PSIwLjMiLz48cGF0aCBmaWxsPSIjYTdkMWU3IiBkPSJNMCw0Ni42Yzc4LjYtNTAuOCwyMTMuOS03OS43LDU0NS43LTEzLjJjMzMxLjgsNjYuNSw1NjMuNC0zOS41LDczNC40LDkuNnY4MC40SDB2LTc3eiIgb3BhY2l0eT0iMC41Ii8+PHBhdGggZmlsbD0iI2IxZWRmZiIgZD0iTTAwLDA2Yzc4LjYtNTAuOCwyMTMuOS03OS43LDU0NS43LTEzLjJjMzMxLjgsNjYuNSw1NjMuNC0zOS41LDczNC40LDkuNlYxNDBIMFYwNnoiLz48L3N2Zz4=')",
+                        'heart-pattern': "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZD0iTTUwIDg1LjI2TDMyLjUgNzUuNjR2LTE4TDQ1IDY1bDEwLTguMDhsOS44NTYgOC41NC0uMDUzLS4wNkw3NSA2MFY1MGgyNUw2NSAzMEw1MCA0MCAzNSA0MCAyNSAyMCAzMCAxMFYwdjI1TDIwIDMwdjIwTDQgNDVWMzcgbTQ2LTQwLjU2TDgyLjQgMzd2MTV6IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZWEwYjQiIHN0cm9rZS13aWR0aD0iMSIvPjxyZWN0IHdpZHRoPSIzNyIgaGVpZ2h0PSIzNyIgeD0iMzEuNSIgeT0iMzEuNSIgZmlsbD0iI2ZmY2Y1MyIgcng9IjUiIHJ5PSI1Ii8+PC9zdmc+')",
+                        'sandy': "radial-gradient(circle, #f0d9b5 0%, #e6c9b0 20%, #dcb9ab 40%, #d2a9a6 60%, #c899a1 80%, #be899c 100%)"
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/css">
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+        
+        @keyframes wave {
+            0%, 100% { transform: rotate(0); }
+            25% { transform: rotate(5deg); }
+            50% { transform: rotate(0); }
+            75% { transform: rotate(-5deg); }
+        }
+        
+        .float-animate {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .twinkle-animate {
+            animation: twinkle 3s ease-in-out infinite;
+        }
+        
+        .wave-animate {
+            animation: wave 5s ease-in-out infinite;
+        }
+        
+        .cat-blink {
+            animation: blink 4s ease-in-out infinite;
+        }
+        
+        @keyframes blink {
+            0%, 85%, 100% { transform: scaleY(1); }
+            90% { transform: scaleY(0.1); }
+        }
+        
+        .slide-enter {
+            animation: slideIn 0.8s forwards;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .transition-page {
+            transition: opacity 1s ease, transform 1.5s ease;
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 24px;
+            color: rgba(255, 0, 0, 0.3);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .cat-badge {
+            position: absolute;
+            width: 45px;
+            height: 45px;
+            background-color: #ffa8c0;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            font-size: 24px;
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle, #c2e4ff, #fff0e6);
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: #5a4a42;
+        }
+        
+        .choice-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 20px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body class="relative overflow-x-hidden bg-gradient-to-b from-bleu-ciel to-beige min-h-screen flex flex-col">
+
+    <!-- Decorative elements -->
+    <div id="hearts-container" class="fixed inset-0 pointer-events-none z-0"></div>
+    
+    <div class="cat-badge" style="top: 15%; left: 5%; animation-delay: 0.2s;">😺</div>
+    <div class="cat-badge" style="top: 25%; right: 7%; animation-delay: 0.6s;">🐱</div>
+    <div class="cat-badge" style="bottom: 10%; left: 8%; animation-delay: 1.0s;">🐾</div>
+    <div class="cat-badge" style="bottom: 20%; right: 5%; animation-delay: 0.4s;">❤️</div>
+    
+    <div id="cats-container" class="fixed inset-0 pointer-events-none z-0"></div>
+    
+    <!-- Cat mascot with animations -->
+    <div id="cat-mascot" class="fixed bottom-0 left-0 z-10 transition duration-500">
+        <div class="flex flex-col items-center mb-4 ml-4">
+            <div class="text-center">
+                <div class="text-4xl float-animate wave-animate">😻</div>
+                <div class="mt-2 bg-white text-rose-fonce text-sm py-1 px-3 rounded-full font-bold shadow-lg">Miaourida</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Music controller -->
+    <div class="fixed top-4 right-4 z-50">
+        <button id="music-toggle" class="bg-rose-clair text-white p-3 rounded-full shadow-lg hover:bg-rose-fonce transition transform hover:scale-110">
+            <i class="fas fa-music text-xl"></i>
+        </button>
+    </div>
+    
+    <!-- Background music -->
+    <audio id="bg-music" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+    
+    <div id="app" class="container mx-auto px-4 py-8 flex-1 flex flex-col z-10">
+        <!-- Introduction -->
+        <div id="intro-page" class="transition-page min-h-[80vh] flex flex-col justify-center items-center slide-enter">
+            <div class="text-center mb-12 fade-in">
+                <h1 class="font-dancing text-5xl md:text-7xl font-bold mb-4 text-rose-fonce">Farida & Tarek</h1>
+                <h2 class="font-montserrat text-3xl md:text-4xl font-bold text-bleu-fonce mb-8">L'Aventure Miaoumant Romantique</h2>
+                
+                <div class="max-w-2xl mx-auto bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl">
+                    <p class="text-lg md:text-xl italic text-marron leading-relaxed mb-6">
+                        "Farida se réveille doucement, bercée par le chant des vagues (ou peut-être juste par la voix de Tarek qui chuchote 'J’ai une surprise' 🐱). 
+                        Aujourd’hui, pas de boulot, pas de stress. Juste toi, moi… et une aventure pleine de tendresse."
+                    </p>
+                    <div class="mt-8">
+                        <button id="start-btn" class="bg-bleu-fonce text-white font-bold py-3 px-10 rounded-full text-xl shadow-lg hover:bg-bleu-clair transform transition-all duration-300 hover:scale-105">
+                            Commencer l'aventure
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Question pages -->
+        <div id="question-pages" class="hidden transition-page min-h-[80vh] flex flex-col justify-center w-full">
+            <!-- Question 1 -->
+            <div id="q1-page" class="question-page hidden w-full max-w-4xl mx-auto">
+                <div class="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-6 md:p-10">
+                    <div class="text-center mb-8">
+                        <div class="text-bleu-fonce font-bold mb-1">Question 1</div>
+                        <h2 class="text-2xl md:text-3xl font-montserrat font-bold text-rose-fonce mb-2">Comment commençons-nous cette journée parfaite, mon cœur ?</h2>
+                        <p class="text-marron italic">Choisis ton scénario de rêve...</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="choice-card bg-rose-clair text-white rounded-xl p-6 cursor-pointer transition-all duration-300 flex flex-col items-center text-center" data-choice="0">
+                            <div class="text-4xl mb-4">😴</div>
+                            <h3 class="font-bold text-xl mb-2">"Je dors encore un peu, le bonheur absolu."</h3>
+                            <p class="text-sm opacity-90">Tu dors. Moi je te regarde dormir (pas creepy hein, juste amoureux), un chat British ronronne à tes pieds.</p>
+                        </div>
+                        
+                        <div class="choice-card bg-bleu-ciel text-bleu-fonce rounded-xl p-6 cursor-pointer transition-all duration-300 flex flex-col items-center text-center" data-choice="1">
+                            <div class="text-4xl mb-4">☕</div>
+                            <h3 class="font-bold text-xl mb-2">"Un bon café, un chat sur mes genoux, et du calme autour."</h3>
+                            <p class="text-sm opacity-90">Café prêt. Chat roux façon Garfield grimpe sur toi comme s’il te connaissait depuis 10 vies. Spoiler : il s’appelle "Miaourida".</p>
+                        </div>
+                        
+                        <div class="choice-card bg-bleu-clair text-white rounded-xl p-6 cursor-pointer transition-all duration-300 flex flex-col items-center text-center" data-choice="2">
+                            <div class="text-4xl mb-4">🌊</div>
+                            <h3 class="font-bold text-xl mb-2">"Balade au bord de la mer, cheveux au vent."</h3>
+                            <p class="text-sm opacity-90">Main dans la main, on marche, on parle de rien, juste le bruit des vagues et quelques "je t’aime" discrets.</p>
+                        </div>
+                        
+                        <div class="choice-card bg-beige text-rose-fonce rounded-xl p-6 cursor-pointer transition-all duration-300 flex flex-col items-center text-center" data-choice="3">
+                            <div class="text-4xl mb-4">🏖️</div>
+                            <h3 class="font-bold text-xl mb-2">"Bronzette à la plage avec une série turque dans les oreilles."</h3>
+                            <p class="text-sm opacity-90">Tu regardes ta série, je regarde toi. C’est ce qu’on appelle du binge-watching amoureux.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between mt-8 px-4">
+                        <button class="back-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full">← Retour</button>
+                        <div class="flex space-x-2">
+                            <div class="w-3 h-3 bg-rose-clair rounded-full"></div>
+                            <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
+                            <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 2 -->
+            <div id="q2-page" class="question-page hidden w-full max-w-4xl mx-auto">
+                <div class="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-6 md:p-10">
+                    <div class="text-center mb-8">
+                        <div class="text-bleu-fonce font-bold mb-1">Question 2</div>
+                        <h2 class="text-2xl md:text-3xl font-montserrat font-bold text-rose-fonce mb-2">Quel invité mystère débarque dans notre journée ?</h2>
+                        <p class="text-marron italic">Qui vient rendre notre journée encore plus incroyable ?</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="choice-card bg-rose-clair text-white rounded-xl p-6 cursor-pointer transition-all duration-300 flex flex-col items-center text-center" data-choice="0">
+                            <div class="text-4xl mb-4">🐱</div>
+                            <h3 class="font-bold text-xl mb-2">"Un chat trop mignon, un peu paresseux, exactement comme Garfield."</h3>
+                            <p class="text-sm opacity-90">Le chat s’installe direct dans le lit. Il ronfle, toi aussi. Tarek prend une photo : "Mes deux doudous dorment ensemble."</p>
+                        </div>
+                        
+                        <div class="choice-card bg-bleu-ciel text-bleu-fonce rounded-xl p-6 cursor-pointer transition-all duration-300 flex flex-col items-center text-center" data-choice="1">
+                            <div class="text-4xl mb-4">🍝</div>
+                            <h3 class="font-bold text-xl mb-2">"Un chef turc célèbre vient cuisiner des pâtes version Istanbul."</h3>
+                            <p class="text-sm opacity-90">Vous cuisinez avec lui. Farida goûte, ferme les yeux. Tarek en profite pour lui voler un bisou sauce tomate.</p>
+                        </div>
+                        
+                        <div class="choice-card bg-bleu-clair text-white rounded-xl p-6 cursor-pointer transition-all duration-300 flex flex-col items-center text-center" data-choice="2">
+                            <div class="text-4xl mb-4">💋</div>
+                            <h3 class="font-bold text-xl mb-2">"Une influenceuse beauté débarque avec un tuto 'make-up simple & classe'."</h3>
+                            <p class="text-sm opacity-90">Tu ressors magnifique, comme toujours. L’influenceuse dit : "Tu brilles sans filtre." Tarek : "Elle brillait déjà avant, hein."</p>
+                        </div>
+                        
+                        <div class="choice-card bg-beige text-rose-fonce rounded-xl p-6 cursor-pointer transition-all duration-300 flex flex-col items-center text-center" data-choice="3">
+                            <div class="text-4xl mb-4">🎥</div>
+                            <h3 class="font-bold text-xl mb-2">"Une équipe de télé-réalité veut faire un épisode spécial : 'Farida & Tarek : les amoureux discrets'."</h3>
+                            <p class="text-sm opacity-90">La télé-réalité ? Vous jouez le jeu… mais le vrai show, c’est vos regards, vos blagues et ton chat qui saute dans le cadre.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between mt-8 px-4">
+                        <button class="back-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full">← Retour</button>
+                        <div class="flex space-x-2">
+                            <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
+                            <div class="w-3 h-3 bg-rose-clair rounded-full"></div>
+                            <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 3 -->
+            <div id="q3-page" class="question-page hidden w-full max-w-4xl mx-auto">
+                <div class="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-6 md:p-10">
+                    <div class="text-center mb-8">
+                        <div class="text-bleu-fonce font-bold mb-1">Question 3</div>
+                        <h2 class="text-2xl md:text-3xl font-montserrat font-bold text-rose-fonce mb-2">Le soleil se couche doucement… Que faisons-nous ?</h2>
+                        <p class="text-marron italic">Dernière étape de notre journée magique...</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="choice-card bg-rose-clair text-white rounded-xl p-6 cursor-pointer transition-all duration-300 flex flex-col items-center text-center" data-choice="0">
+                            <div class="text-4xl mb-4">🌇</div>
+                            <h3 class="font-bold text-xl mb-2">"Balade romantique sur la plage, pieds nus dans le sable."</h3>
+                            <p class="text-sm opacity-90">Tarek t’attrape la main. "Tu sais, chaque coucher de soleil, je le compare à toi… et c’est toi qui gagnes."</p>
+                        </div>
+                        
+                        <div class="choice-card bg-bleu-ciel text-bleu-fonce rounded-xl p-6 cursor-pointer transition-all duration-300 flex flex-col items-center text-center" data-choice="1">
+                            <div class="text-4xl mb-4">📺</div>
+                            <h3 class="font-bold text-xl mb-2">"On se pose avec un épisode de série turque."</h3>
+                            <p class="text-sm opacity-90">Toi absorbée par la série, lui absorbé par toi. Il demande rien, il est juste heureux.</p>
+                        </div>
+                        
+                        <div class="choice-card bg-bleu-clair text-white rounded-xl p-6 cursor-pointer transition-all duration-300 flex flex-col items-center text-center" data-choice="2">
+                            <div class="text-4xl mb-4">🍝</div>
+                            <h3 class="font-bold text-xl mb-2">"Un dîner en tête à tête avec des pâtes, évidemment."</h3>
+                            <p class="text-sm opacity-90">Pâtes + toi = recette parfaite. Tarek renverse le parmesan, tu rigoles. Il dit : "C’est pas moi, c’est l’amour."</p>
+                        </div>
+                        
+                        <div class="choice-card bg-beige text-rose-fonce rounded-xl p-6 cursor-pointer transition-all duration-300 flex flex-col items-center text-center" data-choice="3">
+                            <div class="text-4xl mb-4">😻</div>
+                            <h3 class="font-bold text-xl mb-2">"On joue avec notre chat en se racontant des souvenirs."</h3>
+                            <p class="text-sm opacity-90">Le chat court après une ficelle, vous après vos souvenirs. Et si le bonheur, c’était juste ça ?</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between mt-8 px-4">
+                        <button class="back-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full">← Retour</button>
+                        <div class="flex space-x-2">
+                            <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
+                            <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
+                            <div class="w-3 h-3 bg-rose-clair rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Ending Page -->
+        <div id="ending-page" class="hidden transition-page min-h-[80vh] flex flex-col justify-center w-full max-w-4xl mx-auto">
+            <div class="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-6 md:p-10 text-center">
+                <div class="mb-6">
+                    <div class="text-bleu-fonce font-bold text-5xl mb-2">❤️</div>
+                    <h2 class="text-3xl md:text-4xl font-dancing font-bold text-rose-fonce mb-6">Notre journée rêvée</h2>
+                    
+                    <div class="text-left mb-10">
+                        <div id="story-sequence" class="space-y-6 text-lg text-marron">
+                            <!-- Story content will be injected here -->
+                        </div>
+                    </div>
+                    
+                    <div id="conclusion" class="italic text-xl text-bleu-fonce mb-10 border-t border-rose-clair pt-6">
+                        <p>La journée s'achève, et Farida se blottit contre Tarek. Il chuchote : "Je ferais cette aventure tous les jours, tant que c’est avec toi." Le chat ronronne d'accord.</p>
+                    </div>
+                    
+                    <div class="flex flex-col md:flex-row justify-center gap-4 mt-10">
+                        <button id="restart-btn" class="bg-rose-clair text-white font-bold py-3 px-6 rounded-full flex items-center justify-center gap-2 hover:bg-rose-fonce transition">
+                            <i class="fas fa-redo"></i> Refaire l'aventure
+                        </button>
+                        <button id="email-btn" class="bg-bleu-clair text-white font-bold py-3 px-6 rounded-full flex items-center justify-center gap-2 hover:bg-bleu-fonce transition">
+                            <i class="fas fa-envelope"></i> Envoyer par mail
+                        </button>
+                        <button id="save-btn" class="bg-bleu-ciel text-bleu-fonce font-bold py-3 px-6 rounded-full flex items-center justify-center gap-2 hover:bg-bleu-clair transition">
+                            <i class="fas fa-save"></i> Sauvegarder
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Wave footer -->
+    <div class="h-24 bg-cover bg-center mt-auto" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEyODAgMTQwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48cGF0aCBmaWxsPSIjZjhhMWMwIiBkPSJNMCwyNi42Yzc4LjYtNTAuOCwyMTMuOS03OS43LDU0NS43LTEzLjJjMzMxLjgsNjYuNSw1NjMuNC0zOS41LDczNC40LDkuNnYxMTcuNEgwVjI2LjZ6IiBvcGFjaXR5PSIwLjciLz48cGF0aCBmaWxsPSIjZjhhMWMwIiBkPSJNMCw0Ni42Yzc4LjYtNTAuOCwyMTMuOS03OS43LDU0NS43LTEzLjJjMzMxLjgsNjYuNSw1NjMuNC0zOS41LDczNC40LDkuNnY4MC40SDB2LTc3eiIgb3BhY2l0eT0iMC44Ii8+PHBhdGggZmlsbD0iI2Y4YTFjMCIgZD0iTTAwLDA2Yzc4LjYtNTAuOCwyMTMuOS03OS43LDU0NS43LTEzLjJjMzMxLjgsNjYuNSw1NjMuNC0zOS41LDczNC40LDkuNlYxNDBIMFYwNnoiLz48L3N2Zz4=')"></div>
+    
+    <script>
+        // User choices storage
+        const answers = { q1: null, q2: null, q3: null };
+        const catPoints = { q1: [0,1,0,0], q2: [1,0,0,1], q3: [0,0,0,1] };
+        const tvPoints = { q1: [0,0,0,1], q2: [0,0,0,1], q3: [0,1,0,0] };
+        let currentPage = 'intro';
+        let chosenEnding = 'tendresse';
+        
+        // DOM elements
+        const app = document.getElementById('app');
+        const introPage = document.getElementById('intro-page');
+        const questionPages = document.getElementById('question-pages');
+        const q1Page = document.getElementById('q1-page');
+        const q2Page = document.getElementById('q2-page');
+        const q3Page = document.getElementById('q3-page');
+        const endingPage = document.getElementById('ending-page');
+        const storySequence = document.getElementById('story-sequence');
+        
+        // Music elements
+        const musicToggle = document.getElementById('music-toggle');
+        const bgMusic = document.getElementById('bg-music');
+        
+        // Initialize scene with decorative elements
+        function initScene() {
+            // Create floating hearts
+            const heartsContainer = document.getElementById('hearts-container');
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.innerHTML = '❤';
+                heart.style.left = `${Math.random() * 100}%`;
+                heart.style.top = `${Math.random() * 100}%`;
+                heart.style.fontSize = `${Math.random() * 20 + 10}px`;
+                heart.style.opacity = Math.random() * 0.6 + 0.2;
+                heart.style.animationDuration = `${Math.random() * 4 + 4}s`;
+                heartsContainer.appendChild(heart);
+            }
+        }
+        
+        // Navigation functions
+        function showPage(page) {
+            // Hide all pages
+            introPage.classList.add('hidden');
+            questionPages.classList.add('hidden');
+            q1Page.classList.add('hidden');
+            q2Page.classList.add('hidden');
+            q3Page.classList.add('hidden');
+            endingPage.classList.add('hidden');
+            
+            // Reset animation classes
+            const pages = [introPage, questionPages, q1Page, q2Page, q3Page, endingPage];
+            pages.forEach(page => page.classList.remove('slide-enter', 'fade-in'));
+            
+            // Show requested page
+            currentPage = page;
+            switch(page) {
+                case 'intro':
+                    introPage.classList.remove('hidden');
+                    introPage.classList.add('slide-enter');
+                    break;
+                case 'q1':
+                    questionPages.classList.remove('hidden');
+                    q1Page.classList.remove('hidden');
+                    q1Page.classList.add('fade-in');
+                    break;
+                case 'q2':
+                    questionPages.classList.remove('hidden');
+                    q2Page.classList.remove('hidden');
+                    q2Page.classList.add('fade-in');
+                    break;
+                case 'q3':
+                    questionPages.classList.remove('hidden');
+                    q3Page.classList.remove('hidden');
+                    q3Page.classList.add('fade-in');
+                    break;
+                case 'ending':
+                    generateStory();
+                    endingPage.classList.remove('hidden');
+                    endingPage.classList.add('fade-in');
+                    break;
+            }
+        }
+        
+        // Process user choice
+        function recordAnswer(question, choice) {
+            answers[question] = choice;
+            
+            // Show next page
+            if (question === 'q1') showPage('q2');
+            if (question === 'q2') showPage('q3');
+            if (question === 'q3') {
+                calculateEnding();
+                setTimeout(() => showPage('ending'), 500);
+            }
+        }
+        
+        // Calculate ending based on choices
+        function calculateEnding() {
+            let totalCatPoints = 0;
+            let totalTVPoints = 0;
+            
+            // Q1 points
+            totalCatPoints += catPoints.q1[answers.q1];
+            totalTVPoints += tvPoints.q1[answers.q1];
+            
+            // Q2 points
+            totalCatPoints += catPoints.q2[answers.q2];
+            totalTVPoints += tvPoints.q2[answers.q2];
+            
+            // Q3 points
+            totalCatPoints += catPoints.q3[answers.q3];
+            totalTVPoints += tvPoints.q3[answers.q3];
+            
+            // Determine ending
+            if (totalCatPoints >= 2) {
+                chosenEnding = 'garfield';
+                document.getElementById('conclusion').innerHTML = `
+                    <p>La journée : 3 siestes, 2 crises de rire, 1 pâte collée au plafond, 1 chat adopté. Verdict : Farida est la vraie star de cette télé-réalité de l’amour.</p>
+                    <p class="mt-4 text-2xl">😼 Garfield & Nous 😼</p>
+                `;
+                document.querySelector('#conclusion').className = "italic text-xl text-rose-fonce mb-10 border-t border-rose-clair pt-6";
+            } else if (totalTVPoints >= 2) {
+                chosenEnding = 'serie';
+                document.getElementById('conclusion').innerHTML = `
+                    <p>Regard caméra. Musique dramatique. Tarek dit : "Farida, si c’était un épisode… tu serais le cliffhanger de ma vie." Générique.</p>
+                    <p class="mt-4 text-2xl">✨ Sérieuse comme une série turque ✨</p>
+                `;
+                document.querySelector('#conclusion').className = "italic text-xl text-bleu-fonce mb-10 border-t border-bleu-clair pt-6";
+            } else {
+                chosenEnding = 'tendresse';
+                document.getElementById('conclusion').innerHTML = `
+                    <p>La journée s'achève, et Farida se blottit contre Tarek. Il chuchote : "Je ferais cette aventure tous les jours, tant que c’est avec toi." Le chat ronronne d'accord.</p>
+                    <p class="mt-4 text-2xl">❤️ Fin "Tendresse" ❤️</p>
+                `;
+                document.querySelector('#conclusion').className = "italic text-xl text-rose-fonce mb-10 border-t border-rose-clair pt-6";
+            }
+        }
+        
+        // Generate story sequence
+        function generateStory() {
+            const scenarios = {
+                q1: [
+                    "Le matin, tu dors encore un peu. Moi je te regarde dormir (pas creepy hein, juste amoureux). Un magnifique chat British ronronne à tes pieds.",
+                    "Commençons par un bon café tout chaud. Miaourida, notre chat roux façon Garfield, grimpe sur toi comme s'il te connaissait depuis 10 vies.",
+                    "On commence par une balade main dans la main au bord de la mer. On parle de rien, on écoute juste les vagues et on échange quelques 'je t'aime' discrets.",
+                    "Le début de journée idéal ? Une bonne bronzette à la plage avec ta série turque préférée dans les oreilles. Mon binge-watching à moi, c'est regarder ta beauté."
+                ],
+                q2: [
+                    "Pour notre invité surprise, un chat trop mignon est arrivé ! Il s'est installé direct dans le lit. Il ronfle, toi aussi. J'ai pris une photo : 'Mes deux doudous dorment ensemble.'",
+                    "Notre invité mystère ? Un chef turc célèbre qui est venu cuisiner des pâtes version Istanbul. Tu as goûté en fermant les yeux - j'en ai profité pour te voler un bisou sauce tomate.",
+                    "L'invitée du jour ? Une influenceuse beauté qui nous a montré un tuto 'make-up simple & classe'. Résultat : tu ressors magnifique comme toujours. Elle a dit : 'Tu brilles sans filtre.' Moi, j'ai corrigé : 'Elle brillait déjà avant, hein.'",
+                    "Une équipe de télé-réalité est venue pour un épisode spécial : 'Farida & Tarek : les amoureux discrets'. On a joué le jeu... Mais le vrai show, c'était nos regards complices, nos blagues et Miaourida qui sautait dans le cadre."
+                ],
+                q3: [
+                    "Au coucher du soleil, on fait une dernière balade romantique sur la plage, pieds nus dans le sable. Je t'attrape la main et je te dis : 'Tu sais, chaque coucher de soleil, je le compare à toi... et c'est toi qui gagnes.'",
+                    "À la tombée de la nuit, on s'est posés pour regarder un épisode de la série turque du moment. Toi absorbée par l'histoire, moi absorbé par toi. Je ne demande rien d'autre que ce moment avec toi.",
+                    "Le dîner est évidemment des pâtes, en tête-à-tête. Pâtes + toi = recette parfaite. J'ai renversé le parmesan en essayant d'être gracieux et tu as rigolé. J'ai dit : 'C'est pas moi, c'est l'amour.'",
+                    "Avant d'aller dormir, on joue avec Miaourida en se racontant nos plus beaux souvenirs. Le chat court après une ficelle, et nous on court après ces moments de pur bonheur."
+                ]
+            };
+            
+            // Clear previous content
+            storySequence.innerHTML = '';
+            
+            // Add the selected scenarios
+            const morningScene = document.createElement('p');
+            morningScene.innerHTML = scenarios.q1[answers.q1];
+            morningScene.className = "flex items-start border-l-4 border-rose-clair pl-4 py-2";
+            storySequence.appendChild(morningScene);
+            
+            const afternoonScene = document.createElement('p');
+            afternoonScene.innerHTML = scenarios.q2[answers.q2];
+            afternoonScene.className = "flex items-start border-l-4 border-bleu-clair pl-4 py-2";
+            storySequence.appendChild(afternoonScene);
+            
+            const eveningScene = document.createElement('p');
+            eveningScene.innerHTML = scenarios.q3[answers.q3];
+            eveningScene.className = "flex items-start border-l-4 border-bleu-fonce pl-4 py-2";
+            storySequence.appendChild(eveningScene);
+        }
+        
+        // Save story functionality
+        function saveStory() {
+            const storyText = document.getElementById('story-sequence').innerText + '\n\n' + 
+                             document.getElementById('conclusion').innerText;
+            const blob = new Blob([storyText], {type: 'text/plain'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'notre_aventure.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+        
+        // Email story functionality
+        function emailStory() {
+            const storyText = document.getElementById('story-sequence').innerText + '\n\n' + 
+                             document.getElementById('conclusion').innerText;
+            const subject = encodeURIComponent('Notre aventure romantique');
+            const body = encodeURIComponent(`Voici le récit de notre journée parfaite :\n\n${storyText}\n\n❤ Farida & Tarek ❤`);
+            window.open(`mailto:?subject=${subject}&body=${body}`);
+        }
+        
+        // Reset adventure
+        function resetAdventure() {
+            answers.q1 = null;
+            answers.q2 = null;
+            answers.q3 = null;
+            showPage('q1');
+        }
+        
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize scene
+            initScene();
+            
+            // Show intro page
+            showPage('intro');
+            
+            // Add event listeners
+            document.getElementById('start-btn').addEventListener('click', () => showPage('q1'));
+            
+            // Add choice listeners
+            document.querySelectorAll('.choice-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const questionId = this.closest('.question-page').id.replace('-page', '');
+                    const choice = this.dataset.choice;
+                    recordAnswer(questionId, parseInt(choice));
+                    
+                    // Animate selection
+                    this.classList.add('bg-rose-fonce', 'text-white', 'transform', 'scale-105');
+                    setTimeout(() => {
+                        this.classList.remove('bg-rose-fonce', 'text-white', 'transform', 'scale-105');
+                    }, 300);
+                });
+            });
+            
+            // Back button listeners
+            document.querySelectorAll('.back-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    if (currentPage === 'q2') showPage('q1');
+                    else if (currentPage === 'q3') showPage('q2');
+                });
+            });
+            
+            // Ending buttons
+            document.getElementById('restart-btn').addEventListener('click', resetAdventure);
+            document.getElementById('save-btn').addEventListener('click', saveStory);
+            document.getElementById('email-btn').addEventListener('click', emailStory);
+            
+            // Music control
+            musicToggle.addEventListener('click', function() {
+                if (bgMusic.paused) {
+                    bgMusic.play();
+                    this.innerHTML = '<i class="fas fa-pause"></i>';
+                } else {
+                    bgMusic.pause();
+                    this.innerHTML = '<i class="fas fa-music"></i>';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
